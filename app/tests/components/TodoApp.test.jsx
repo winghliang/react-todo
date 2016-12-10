@@ -29,11 +29,8 @@ describe('TodoApp Component', () => {
     todoApp.handleAddToDo(todoText);
 
     expect(todoApp.state.todos[0].completed).toBe(false);
-
     todoApp.handleToggle(todoApp.state.todos[0].id);
-
     expect(todoApp.state.todos[0].completed).toBe(true);
-
   });
 
 });
