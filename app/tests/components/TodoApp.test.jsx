@@ -21,4 +21,19 @@ describe('TodoApp Component', () => {
     expect(todoApp.state.todos[0].text).toBe('eat lunch');
   });
 
+  it('should toggle completed value when handleToggle called', () => {
+    var todoText = 'work on React app';
+    var todoApp = TestUtils.renderIntoDocument(< TodoApp />);
+
+    todoApp.setState({ todos: [] });
+    todoApp.handleAddToDo(todoText);
+
+    expect(todoApp.state.todos[0].completed).toBe(false);
+
+    todoApp.handleToggle(todoApp.state.todos[0].id);
+
+    expect(todoApp.state.todos[0].completed).toBe(true);
+
+  });
+
 });
